@@ -135,7 +135,7 @@ app.delete('/tickets/:id', async (req, res) => {
   }
 });
 
-mongoose.connect(PROCESS.env.MONOGO_URI)
+mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/deskflow')
   .then(() => {
     app.listen(3000, () => console.log('Backend running on port 3000'));
   })
