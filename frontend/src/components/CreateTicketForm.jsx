@@ -37,10 +37,10 @@ export default function CreateTicketForm({ onCreated }) {
       <select 
         value={formData.priority} onChange={e => setFormData({...formData, priority: e.target.value})}
       >
-        <option value="low">Low</option>
-        <option value="medium">Medium</option>
-        <option value="high">High</option>
-        <option value="urgent">Urgent</option>
+        <option value="low">Low (72 hour)</option>
+        <option value="medium">Medium (24 hour)</option>
+        <option value="high">High (8 hour)</option>
+        <option value="urgent">Urgent (1 hour)</option>
       </select>
       <textarea 
         placeholder="Description" required
