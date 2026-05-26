@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000'
+  baseURL: 'https://bajaj-mern-task-1.onrender.com'
 });
 
 export const getTickets = (params) => api.get('/tickets', { params }).then(res => res.data);
