@@ -2,6 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const Ticket = require('./models/Ticket');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -132,7 +135,7 @@ app.delete('/tickets/:id', async (req, res) => {
   }
 });
 
-mongoose.connect('mongodb+srv://user1:Mongodb123!@cluster0.afmomq9.mongodb.net/deskflow')
+mongoose.connect(PROCESS.env.MONOGO_URI)
   .then(() => {
     app.listen(3000, () => console.log('Backend running on port 3000'));
   })
