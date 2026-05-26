@@ -142,6 +142,9 @@ app.delete('/tickets/:id', async (req, res) => {
 app.get('/bfhl', (req, res) => {
   res.status(200).json({ operation_code: 1 });
 });
+app.post('/bfhl', (req, res) => {
+  res.status(200).json({ operation_code: 1 });
+});
 
 mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/deskflow')
   .then(() => {
